@@ -1,5 +1,5 @@
 import streamlit as st
-from agents import Agent, Runner, OpenAIChatCompletionsModel, AsyncOpenAI
+from agents import Agents, Runner, OpenAIChatCompletionsModel, AsyncOpenAI
 from agents.run import RunConfig
 from dotenv import load_dotenv
 import os
@@ -54,7 +54,7 @@ config = RunConfig(
 )
 
 # Create agent
-translator_agent = Agent(
+translator_agent = Agents(
     name="Translator Agent",
     instructions="You are a translator agent. Translate the input text to the target language specified in the input.",
     model=model,
